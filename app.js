@@ -49,8 +49,14 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 
+
 //static-files
-app.use('/public', express.static(path.join(__dirname, 'public')))
+// app.use('/public', express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/*', function(req,res) {
+		res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 
 //routes
