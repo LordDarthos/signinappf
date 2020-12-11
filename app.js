@@ -65,6 +65,7 @@ app.use(require('./routes/index'))
 app.use(require('./routes/notes'))
 
 
+
 async function initApp (dbConfig) {
     try {
         await connectDB(dbConfig);
